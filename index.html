@@ -136,8 +136,8 @@
         <div class="newsletter">
             <h3>Sign up for our Newsletter</h3>
             <p>Stay updated with our latest classes and events.</p>
-            <form>
-                <input type="email" placeholder="Enter your email" required>
+            <form id="newsletter-form">
+                <input type="email" placeholder="Enter your email" required id="email-input">
                 <input type="submit" value="Subscribe">
             </form>
         </div>
@@ -173,6 +173,7 @@
             <a href="https://youtube.com/@BlackLotusFlowerYoga">YouTube</a>
             <a href="https://www.facebook.com/TondraT?mibextid=ZbWKwL">Facebook</a>
             <a href="https://snapchat.com/add/tondrapatton">Snapchat</a>
+>
         </div>
     </div>
     <footer>
@@ -185,6 +186,27 @@
             });
             document.getElementById(page).style.display = 'block';
         }
+
+        document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email-input').value;
+            
+            fetch('https://yourbackendserver.com/newsletter', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email: email }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Thank you for subscribing!');
+                document.getElementById('newsletter-form').reset();
+            })
+            .catch((error) => {
+                alert('Error: ' + error);
+            });
+        });
     </script>
 </body>
 </html>
