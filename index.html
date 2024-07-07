@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: 'Avenir', sans-serif;
-            background-color: #e0f7fa;
+            background-color: #e0f7fa; /* Matching color */
             color: #004d40;
             margin: 0;
             padding: 0;
@@ -59,6 +59,14 @@
             color: #004d40;
             font-size: 1.2em;
         }
+        .image-placeholder {
+            width: 55%;
+            height: 200px;
+            margin: 10px;
+            background-color: #b2dfdb;
+            border: 2px dashed #004d40;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
@@ -76,6 +84,11 @@
             <h2>Sign up for our Newsletter</h2>
             <input type="email" id="email" placeholder="Enter your email">
             <button onclick="signUpNewsletter()">Sign Up</button>
+        </div>
+        <div class="image-placeholders">
+            <div class="image-placeholder"></div>
+            <div class="image-placeholder"></div>
+            <div class="image-placeholder"></div>
         </div>
         <div class="social-media">
             <h2>Follow Us</h2>
