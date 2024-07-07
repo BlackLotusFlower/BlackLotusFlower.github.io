@@ -4,179 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Black Lotus Flower Yoga</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="site.webmanifest">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Avenir:wght@400;700&display=swap');
-
         body {
             font-family: 'Avenir', sans-serif;
+            background-color: #d0e7f9;
             margin: 0;
             padding: 0;
-            background-color: #bbdefb;
-            color: #0d47a1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
         }
         header {
-            background-color: #0d47a1;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        nav {
             display: flex;
-            justify-content: center;
-            background-color: #1565c0;
-        }
-        nav a {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            text-align: center;
-        }
-        nav a:hover {
-            background-color: #0d47a1;
-        }
-        .content {
-            padding: 20px;
-        }
-        .content h2 {
-            color: #0d47a1;
-        }
-        .content p {
-            margin: 0 0 20px;
-        }
-        .content .video-placeholder, .content .image-placeholder {
-            background-color: #e3f2fd;
+            justify-content: space-between;
+            align-items: center;
             width: 100%;
-            height: 200px;
-            margin-bottom: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #89CFF0;
+        }
+        h1 {
+            margin: 0;
+            color: #ffffff;
+        }
+        img {
+            width: 100px;
+            height: auto;
+        }
+        .placeholder {
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            background-color: #e0e0e0;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #0d47a1;
-            font-size: 1.5em;
-            border: 2px dashed #0d47a1;
+            margin: 20px 0;
+            border: 2px dashed #ccc;
         }
-        .newsletter {
-            background-color: #e3f2fd;
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #ffffff;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        .newsletter input[type="email"] {
-            width: calc(100% - 22px);
+        input[type="email"] {
             padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #0d47a1;
-            border-radius: 5px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
-        .newsletter input[type="submit"] {
-            background-color: #0d47a1;
-            color: white;
+        button {
             padding: 10px 20px;
+            color: #fff;
+            background-color: #007BFF;
             border: none;
-            border-radius: 5px;
+            border-radius: 4px;
             cursor: pointer;
         }
-        .newsletter input[type="submit"]:hover {
-            background-color: #1565c0;
-        }
-        .classes .class {
-            margin-bottom: 20px;
-            padding: 10px;
-            border: 1px solid #0d47a1;
-            border-radius: 10px;
-            background-color: #90caf9;
-        }
-        .class a {
-            color: #0d47a1;
-            font-weight: bold;
-        }
-        .contact a {
-            display: block;
-            margin: 10px 0;
-            color: #0d47a1;
-            text-decoration: none;
-        }
-        .contact a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            background-color: #0d47a1;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+        button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Black Lotus Flower Yoga</h1>
+        <img src="https://i.pinimg.com/474x/da/4c/0e/da4c0e38735deba1984332363a0b00fb.jpg" alt="Logo">
     </header>
-    <nav>
-        <a href="#home" onclick="showPage('home')">Home</a>
-        <a href="#classes" onclick="showPage('classes')">Classes</a>
-        <a href="#contact" onclick="showPage('contact')">Contact Information</a>
-    </nav>
-    <div id="home" class="content">
+    <main>
         <h2>Welcome to Black Lotus Flower Yoga</h2>
-        <p>Experience the serenity and strength of yoga with us. Below are spaces for our yoga pose images and videos:</p>
-        <div class="video-placeholder">Video Placeholder</div>
-        <div class="image-placeholder">Image Placeholder</div>
-        <div class="image-placeholder">Image Placeholder</div>
-        <div class="newsletter">
-            <h3>Sign up for our Newsletter</h3>
-            <p>Stay updated with our latest classes and events.</p>
-            <form>
-                <input type="email" placeholder="Enter your email" required>
-                <input type="submit" value="Subscribe">
-            </form>
-        </div>
-    </div>
-    <div id="classes" class="content" style="display:none;">
-        <h2>Our Classes</h2>
-        <div class="classes">
-            <div class="class">
-                <h3>Beginner Class</h3>
-                <p>For all levels just getting into yoga and trying to relieve lower back pain.</p>
-                <div class="image-placeholder">Image Placeholder</div>
-                <a href="beginner.html" target="_blank">View Beginner Class</a>
-            </div>
-            <div class="class">
-                <h3>Intermediate Class</h3>
-                <p>For people who have been to a couple classes and are comfortable with getting uncomfortable.</p>
-                <div class="image-placeholder">Image Placeholder</div>
-                <a href="intermediate.html" target="_blank">View Intermediate Class</a>
-            </div>
-            <div class="class">
-                <h3>Advanced Class</h3>
-                <p>For the best of the best who are ready to stretch to the max and get sweaty with this Hot Yoga Class!!!</p>
-                <div class="image-placeholder">Image Placeholder</div>
-                <a href="advanced.html" target="_blank">View Advanced Class</a>
-            </div>
-        </div>
-    </div>
-    <div id="contact" class="content" style="display:none;">
-        <h2>Contact Information</h2>
-        <div class="contact">
-            <a href="https://ovou.me/example" target="_blank">Ovou</a>
-            <a href="https://instagram.com/example" target="_blank">Instagram</a>
-            <a href="https://youtube.com/example" target="_blank">YouTube</a>
-            <a href="https://facebook.com/example" target="_blank">Facebook</a>
-            <a href="https://snapchat.com/add/example" target="_blank">Snapchat</a>
-        </div>
-    </div>
-    <footer>
-        &copy; 2024 Black Lotus Flower Yoga
-    </footer>
+        <div class="placeholder">Image Placeholder</div>
+        <h2>Sign up for our Newsletter</h2>
+        <form id="newsletter-form">
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+        <div id="message"></div>
+    </main>
     <script>
-        function showPage(page) {
-            document.querySelectorAll('.content').forEach(content => {
-                content.style.display = 'none';
-            });
-            document.getElementById(page).style.display = 'block';
-        }
+        document.getElementById('newsletter-form').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message');
+
+            try {
+                const response = await fetch('https://<your-heroku-app-name>.herokuapp.com/newsletter', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email }),
+                });
+
+                if (response.ok) {
+                    message.textContent = 'Thank you for subscribing!';
+                    message.style.color = 'green';
+                } else {
+                    message.textContent = 'Subscription failed. Please try again.';
+                    message.style.color = 'red';
+                }
+            } catch (error) {
+                message.textContent = 'An error occurred. Please try again.';
+                message.style.color = 'red';
+            }
+        });
     </script>
 </body>
 </html>
