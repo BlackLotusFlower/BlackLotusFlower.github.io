@@ -174,7 +174,7 @@
         document.getElementById('newsletter-form').addEventListener('submit', function(event) {
             event.preventDefault();
             const email = document.getElementById('email').value;
-            fetch('https://your-heroku-app.herokuapp.com/newsletter', {  // Replace with your actual Heroku app URL
+            fetch('https://server-js-9c5fbabfe1f0.herokuapp.com/newsletter', {  // Replace with your actual Heroku app URL
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
