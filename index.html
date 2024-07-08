@@ -5,117 +5,177 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Black Lotus Flower Yoga</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Avenir:wght@400;700&display=swap');
+
         body {
             font-family: 'Avenir', sans-serif;
-            background-color: #d0e7f9;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+            background-color: #bbdefb;
+            color: #0d47a1;
         }
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            padding: 20px;
-            background-color: #00796b;
+            background-color: #0d47a1;
             color: white;
-        }
-        header img {
-            width: 50px;
-            height: 50px;
-        }
-        main {
             padding: 20px;
             text-align: center;
         }
-        .class-buttons, .social-media {
-            margin-top: 20px;
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #1565c0;
         }
-        .class-buttons button, .newsletter button {
-            background-color: #004d40;
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #0d47a1;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content h2 {
+            color: #0d47a1;
+        }
+        .content p {
+            margin: 0 0 20px;
+        }
+        .content .video-placeholder, .content .image-placeholder {
+            background-color: #e3f2fd;
+            width: 100%;
+            height: 200px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0d47a1;
+            font-size: 1.5em;
+            border: 2px dashed #0d47a1;
+        }
+        .newsletter {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .newsletter input[type="email"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #0d47a1;
+            border-radius: 5px;
+        }
+        .newsletter input[type="submit"] {
+            background-color: #0d47a1;
             color: white;
             padding: 10px 20px;
-            margin: 5px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
-        .class-buttons button:hover, .newsletter button:hover {
-            background-color: #00332c;
+        .newsletter input[type="submit"]:hover {
+            background-color: #1565c0;
         }
-        .newsletter input {
+        .classes .class {
+            margin-bottom: 20px;
             padding: 10px;
-            margin-right: 10px;
-            border: 1px solid #004d40;
-            border-radius: 5px;
+            border: 1px solid #0d47a1;
+            border-radius: 10px;
+            background-color: #90caf9;
         }
-        .social-media a {
+        .class a {
+            color: #0d47a1;
+            font-weight: bold;
+        }
+        .contact a {
+            display: block;
+            margin: 10px 0;
+            color: #0d47a1;
             text-decoration: none;
-            color: #004d40;
-            font-size: 1.2em;
         }
-        .image-placeholder {
-            width: 85%;
-            height: 200px;
-            margin: 10px;
-            background-color: #d0e7f9;
-            border: 2px dashed #004d40;
-            display: inline-block;
+        .contact a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #0d47a1;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Black Lotus Flower Yoga</h1>
-        <img src="https://i.pinimg.com/474x/da/4c/0e/da4c0e38735deba1984332363a0b00fb.jpg" alt="Lotus Flower">
     </header>
-    <main>
-        <div class="class-buttons">
-            <button onclick="window.location.href='beginner.html'">Beginner Class</button>
-            <button onclick="window.location.href='intermediate.html'">Intermediate Class</button>
-            <button onclick="window.location.href='advanced.html'">Advanced Class</button>
-        </div>
+    <nav>
+        <a href="#home" onclick="showPage('home')">Home</a>
+        <a href="#classes" onclick="showPage('classes')">Classes</a>
+        <a href="#contact" onclick="showPage('contact')">Contact Information</a>
+    </nav>
+    <div id="home" class="content">
+        <h2>Welcome to Black Lotus Flower Yoga</h2>
+        <p>Experience the serenity and strength of yoga with us. Below are spaces for our yoga pose images and videos:</p>
+        <div class="video-placeholder">Video Placeholder</div>
+        <div class="image-placeholder">Image Placeholder</div>
+        <div class="image-placeholder">Image Placeholder</div>
         <div class="newsletter">
-            <h2>Sign up for our Newsletter</h2>
-            <input type="email" id="email" placeholder="Enter your email">
-            <button onclick="signUpNewsletter()">Sign Up</button>
+            <h3>Sign up for our Newsletter</h3>
+            <p>Stay updated with our latest classes and events.</p>
+            <form>
+                <input type="email" placeholder="Enter your email" required>
+                <input type="submit" value="Subscribe">
+            </form>
         </div>
-        <div class="image-placeholders">
-            <div class="image-placeholder"></div>
-            <div class="image-placeholder"></div>
-            <div class="image-placeholder"></div>
+    </div>
+    <div id="classes" class="content" style="display:none;">
+        <h2>Our Classes</h2>
+        <div class="classes">
+            <div class="class">
+                <h3>Beginner Class</h3>
+                <p>For all levels just getting into yoga and trying to relieve lower back pain.</p>
+                <div class="image-placeholder">Image Placeholder</div>
+                <a href="beginner.html" target="_blank">View Beginner Class</a>
+            </div>
+            <div class="class">
+                <h3>Intermediate Class</h3>
+                <p>For people who have been to a couple classes and are comfortable with getting uncomfortable.</p>
+                <div class="image-placeholder">Image Placeholder</div>
+                <a href="intermediate.html" target="_blank">View Intermediate Class</a>
+            </div>
+            <div class="class">
+                <h3>Advanced Class</h3>
+                <p>For the best of the best who are ready to stretch to the max and get sweaty with this Hot Yoga Class!!!</p>
+                <div class="image-placeholder">Image Placeholder</div>
+                <a href="advanced.html" target="_blank">View Advanced Class</a>
+            </div>
         </div>
-        <div class="social-media">
-            <h2>Follow Us</h2>
-            <p>Ovou: <a href="https://ovou.me/tondrapatton">ovou.me/tondrapatton</a></p>
-            <p>YouTube: <a href="https://youtube.com/@BlackLotusFlowerYoga">youtube.com/@BlackLotusFlowerYoga</a></p>
-            <p>Instagram: <a href="https://instagram.com/tondra214">instagram.com/tondra214</a></p>
-            <p>Facebook: <a href="https://facebook.com/TondraT?mibextid=ZbWKwL">facebook.com/TondraT?mibextid=ZbWKwL</a></p>
-            <p>Snapchat: <a href="https://snapchat.com/add/tondrapatton">snapchat.com/add/tondrapatton</a></p>
+    </div>
+    <div id="contact" class="content" style="display:none;">
+        <h2>Contact Information</h2>
+        <div class="contact">
+            <a href="https://ovou.me/example" target="_blank">Ovou</a>
+            <a href="https://instagram.com/example" target="_blank">Instagram</a>
+            <a href="https://youtube.com/example" target="_blank">YouTube</a>
+            <a href="https://facebook.com/example" target="_blank">Facebook</a>
+            <a href="https://snapchat.com/add/example" target="_blank">Snapchat</a>
         </div>
-    </main>
+    </div>
+    <footer>
+        &copy; 2024 Black Lotus Flower Yoga
+    </footer>
     <script>
-        function signUpNewsletter() {
-            const email = document.getElementById('email').value;
-            fetch('/newsletter', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email: email }),
-            })
-            .then(response => response.text())
-            .then(data => {
-                alert(data);
-            })
-            .catch((error) => {
-                console.error('Error:', error);
+        function showPage(page) {
+            document.querySelectorAll('.content').forEach(content => {
+                content.style.display = 'none';
             });
+            document.getElementById(page).style.display = 'block';
         }
     </script>
 </body>
