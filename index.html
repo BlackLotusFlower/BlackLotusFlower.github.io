@@ -171,17 +171,10 @@
         &copy; 2024 Black Lotus Flower Yoga
     </footer>
     <script>
-        function showPage(page) {
-            document.querySelectorAll('.content').forEach(content => {
-                content.style.display = 'none';
-            });
-            document.getElementById(page).style.display = 'block';
-        }
-
         document.getElementById('newsletter-form').addEventListener('submit', function(event) {
             event.preventDefault();
             const email = document.getElementById('email').value;
-            fetch('https://your-heroku-app.herokuapp.com/newsletter', {
+            fetch('https://your-heroku-app.herokuapp.com/newsletter', {  // Replace with your actual Heroku app URL
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
