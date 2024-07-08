@@ -3,7 +3,7 @@ document.getElementById('newsletter-form').addEventListener('submit', async (e) 
     const email = document.getElementById('email').value;
 
     try {
-        const response = await fetch('https://your-app-name.herokuapp.com/newsletter', {
+        const response = await fetch('https://server-js-9c5fbabfe1f0.herokuapp.com//newsletter', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
