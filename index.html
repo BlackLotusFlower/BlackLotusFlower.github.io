@@ -128,8 +128,8 @@
         <div class="newsletter">
             <h3>Sign up for our Newsletter</h3>
             <p>Stay updated with our latest classes and events.</p>
-            <form>
-                <input type="email" placeholder="Enter your email" required>
+            <form id="newsletter-form">
+                <input type="email" id="email" placeholder="Enter your email" required>
                 <input type="submit" value="Subscribe">
             </form>
         </div>
@@ -177,6 +177,25 @@
             });
             document.getElementById(page).style.display = 'block';
         }
+
+        document.getElementById('newsletter-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            fetch('/newsletter', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email: email }),
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        });
     </script>
 </body>
 </html>
