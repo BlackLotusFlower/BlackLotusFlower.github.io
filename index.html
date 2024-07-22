@@ -36,6 +36,7 @@
             padding: 14px 20px;
             text-decoration: none;
             text-align: center;
+            cursor: pointer;
         }
         nav a:hover {
             background-color: #0d47a1;
@@ -114,6 +115,12 @@
             width: 100%;
             bottom: 0;
         }
+        .tab {
+            display: none;
+        }
+        .tab.active {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -121,9 +128,9 @@
         <h1>Black Lotus Flower Yoga</h1>
     </header>
     <nav>
-        <a href="#home" onclick="showPage('home')">Home</a>
-        <a href="#classes" onclick="showPage('classes')">Classes</a>
-        <a href="#contact" onclick="showPage('contact')">Contact Information</a>
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('classes')">Classes</a>
+        <a onclick="showPage('contact')">Contact Information</a>
     </nav>
     <div id="home" class="tab active">
         <h2>Welcome to Black Lotus Flower Yoga</h2>
