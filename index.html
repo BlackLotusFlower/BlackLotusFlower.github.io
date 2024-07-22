@@ -177,6 +177,17 @@
         &copy; 2024 Black Lotus Flower Yoga
     </footer>
     <script>
+        function showPage(pageId) {
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                if (tab.id === pageId) {
+                    tab.classList.add('active');
+                } else {
+                    tab.classList.remove('active');
+                }
+            });
+        }
+
         document.getElementById('newsletter-form').addEventListener('submit', function(event) {
             event.preventDefault();
             const email = document.getElementById('email').value;
